@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:comeeti_online/screens/dashboard_view.dart';
+import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/utils/app_colors.dart';
 import 'package:comeeti_online/utils/extensions.dart';

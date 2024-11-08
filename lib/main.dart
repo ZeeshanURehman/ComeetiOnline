@@ -1,3 +1,4 @@
+import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
 import 'package:comeeti_online/screens/resetPassword/provider/reset_password_provider.dart';
 import 'package:comeeti_online/screens/signin/signin_provider.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
@@ -23,10 +24,10 @@ class MyApp extends StatelessWidget {
           minTextAdapt: true,
           splitScreenMode: true,
         builder: (_,child) {
-          return GetMaterialApp(
+          return const GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'ComeetiOnline',
-          home: SigninView()
+          home: DashboardView()
           );
         }
       ),

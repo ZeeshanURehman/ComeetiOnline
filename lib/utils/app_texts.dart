@@ -85,6 +85,87 @@ class Text16 extends StatelessWidget {
   }
 }
 
+class Text18 extends StatelessWidget {
+  String text;
+  TextAlign? textAlign;
+  FontWeight? fontWeight;
+  Color? color;
+  Text18({
+    this.fontWeight,
+    this.color,
+    required this.text,
+    this.textAlign,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: TextStyle(
+        fontFamily: "Quicksand",
+        fontSize: 18.sp,
+        fontWeight: fontWeight ?? FontWeight.w500,
+        color: color ?? AppColors.black,
+      ),
+    );
+  }
+}
+
+class Text20 extends StatelessWidget {
+  String text;
+  TextAlign? textAlign;
+  FontWeight? fontWeight;
+  Color? color;
+  Text20({
+    this.fontWeight,
+    this.color,
+    required this.text,
+    this.textAlign,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: TextStyle(
+        fontFamily: "Quicksand",
+        fontSize: 16.sp,
+        fontWeight: fontWeight ?? FontWeight.w500,
+        color: color ?? AppColors.black,
+      ),
+    );
+  }
+}
+
+class Text22 extends StatelessWidget {
+  String text;
+  TextAlign? textAlign;
+  FontWeight? fontWeight;
+  Color? color;
+  Text22({
+    this.fontWeight,
+    this.color,
+    required this.text,
+    this.textAlign,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: TextStyle(
+        fontFamily: "Quicksand",
+        fontSize: 22.sp,
+        fontWeight: fontWeight ?? FontWeight.w600,
+        color: color ?? AppColors.black,
+      ),
+    );
+  }
+}
+
 class Text24 extends StatelessWidget {
   String text;
   TextAlign? textAlign;

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -52,7 +53,7 @@ class _CompleteSignupViewState extends State<CompleteSignupView> {
   void startTimer() {
     Timer(Duration(seconds: 4), () {
       Navigator.of(context).pop();
-      Get.to(SigninView());
+      Get.to(DashboardView());
     });
   }
 
