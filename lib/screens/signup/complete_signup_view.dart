@@ -53,7 +53,7 @@ class _CompleteSignupViewState extends State<CompleteSignupView> {
   void startTimer() {
     Timer(Duration(seconds: 4), () {
       Navigator.of(context).pop();
-      Get.to(DashboardView());
+      Get.to(SigninView());
     });
   }
 

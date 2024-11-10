@@ -1,3 +1,4 @@
+import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
 import 'package:comeeti_online/screens/resetPassword/views/forget_password_view.dart';
 import 'package:comeeti_online/screens/resetPassword/views/reset_password_view.dart';
 import 'package:comeeti_online/screens/signin/signin_provider.dart';
@@ -5,6 +6,7 @@ import 'package:comeeti_online/screens/signup/signup_view.dart';
 import 'package:comeeti_online/utils/app_colors.dart';
 import 'package:comeeti_online/utils/app_texts.dart';
 import 'package:comeeti_online/utils/extensions.dart';
+import 'package:comeeti_online/widgets/custom_bottom_bar.dart';
 import 'package:comeeti_online/widgets/custom_textfield.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,28 +40,28 @@ class _SigninViewState extends State<SigninView> {
                 Stack(
                   children: [
                     Container(
-                      height: 1000.h,
+                      height: MediaQuery.of(context).size.height,
                       child: Stack(
                         children: [
                           // top green container
                           Positioned( top: 0,
                             child: Container(
-                              height: 260.h,
-                              width: 430.w,
+                              height: 230.h,
+                              width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 color: AppColors.green,
-                                borderRadius: BorderRadius.circular(20.r),
+                                borderRadius: BorderRadius.circular(24.r),
                               ),
                             ),
                           ),
                           //bottom green container
                           Positioned( bottom: 0,
                             child: Container(
-                              height: 260.h,
-                              width: 430.w,
+                              height: 230.h,
+                              width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
                                 color: AppColors.green,
-                                borderRadius: BorderRadius.circular(20.r),
+                                borderRadius: BorderRadius.circular(24.r),
                               ),
                             ),
                           ),
@@ -77,8 +79,8 @@ class _SigninViewState extends State<SigninView> {
                     ),
                     // white container
                     Positioned(
-                      top: 200.h,
-                      bottom: 200.h,
+                      top: 170.h,
+                      bottom: 150.h,
                       left: 30.w,
                       right: 30.w,
                       child: Container(
@@ -100,6 +102,7 @@ class _SigninViewState extends State<SigninView> {
                               12.ht,
                               CustomTextFormField(hintText: 'Enter your Email',
                                 controller: emailController,
+                                prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 24.sp,),
                                 keyboardType: TextInputType.emailAddress,),
                               24.ht,
                               Text16(text: 'Password'),
@@ -107,6 +110,7 @@ class _SigninViewState extends State<SigninView> {
                               CustomTextFormField(
                                 hintText: 'Enter your Password',
                                 controller: passwordController,
+                                prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
                                 obscureText: !provider.isPasswordVisible,
                                 keyboardType: TextInputType.visiblePassword,
                                 suffixIcon: IconButton(
@@ -130,7 +134,7 @@ class _SigninViewState extends State<SigninView> {
                               CustomButton(
                                 text: 'Sign in',
                                 onTap: () {
-                                  Get.to(SignupView());
+                                  Get.to(CustomBottomNavBar());
                                 },
                               ),
                               20.ht,

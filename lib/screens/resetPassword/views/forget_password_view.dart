@@ -39,6 +39,7 @@ class _ForgetPasswordViewState extends State<ForgetPasswordView> {
             12.ht,
             CustomTextFormField(hintText: 'Enter your Email',
               controller: emailController,
+              prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 24.sp,),
               keyboardType: TextInputType.emailAddress,),
             24.ht,
           ],

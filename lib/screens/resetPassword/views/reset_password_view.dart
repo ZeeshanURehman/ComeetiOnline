@@ -71,6 +71,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                   controller: passwordController,
                   obscureText: !provider.isNewPasswordVisible,
                   keyboardType: TextInputType.visiblePassword,
+                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
                   suffixIcon: IconButton(
                     icon: Icon(
                       provider.isNewPasswordVisible
@@ -89,6 +90,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                   controller: cnfrmPasswordController,
                   obscureText: !provider.isConfirmPasswordVisible,
                   keyboardType: TextInputType.visiblePassword,
+                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
                   suffixIcon: IconButton(
                     icon: Icon(
                       provider.isConfirmPasswordVisible

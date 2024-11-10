@@ -3,6 +3,8 @@ import 'package:comeeti_online/screens/resetPassword/provider/reset_password_pro
 import 'package:comeeti_online/screens/signin/signin_provider.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/screens/signup/signup_provider.dart';
+import 'package:comeeti_online/screens/signup/signup_view.dart';
+import 'package:comeeti_online/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
           return const GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'ComeetiOnline',
-          home: DashboardView()
+          home: SignupView(),
           );
         }
       ),
