@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
+import 'package:comeeti_online/screens/dashboard/views/dashboard_view.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/utils/extensions.dart';
 import 'package:flutter/material.dart';
@@ -108,7 +108,7 @@ class _CompleteSignupViewState extends State<CompleteSignupView> {
                     fontFamily: 'Montserrat',
                   ),
                   children: const <TextSpan>[
-                    TextSpan(text: '55', style: TextStyle(color: AppColors.green)),
+                    TextSpan(text: '55', style: TextStyle(color: AppColors.blue)),
                     TextSpan(text: 's'),
                   ],
                 ),

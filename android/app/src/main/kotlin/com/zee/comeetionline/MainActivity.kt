@@ -1,4 +1,4 @@
-package com.example.comeeti_online
+package com.zee.comeetionline
 
 import io.flutter.embedding.android.FlutterActivity
 

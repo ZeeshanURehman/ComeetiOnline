@@ -1,6 +1,4 @@
-import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
 import 'package:comeeti_online/screens/resetPassword/views/forget_password_view.dart';
-import 'package:comeeti_online/screens/resetPassword/views/reset_password_view.dart';
 import 'package:comeeti_online/screens/signin/signin_provider.dart';
 import 'package:comeeti_online/screens/signup/signup_view.dart';
 import 'package:comeeti_online/utils/app_colors.dart';
@@ -14,6 +12,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 
+import '../../utils/app_images.dart';
 import '../../widgets/custom_button.dart';
 
 class SigninView extends StatefulWidget {
@@ -46,40 +45,30 @@ class _SigninViewState extends State<SigninView> {
                           // top green container
                           Positioned( top: 0,
                             child: Container(
-                              height: 230.h,
+                              height: 280.h,
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
-                                color: AppColors.green,
-                                borderRadius: BorderRadius.circular(24.r),
+                                gradient: AppColors.blueGradient,
+                                borderRadius: BorderRadius.only(bottomRight: Radius.circular(24.sp),bottomLeft: Radius.circular(24.sp)),
                               ),
                             ),
                           ),
-                          //bottom green container
-                          Positioned( bottom: 0,
-                            child: Container(
-                              height: 230.h,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: AppColors.green,
-                                borderRadius: BorderRadius.circular(24.r),
-                              ),
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
                     // Comeeti logo
                     Positioned(
-                      top: 100.h,
+                      top: 60.h,
                       left: 0.w,
                       right: 0.w,
                       child: Center(
-                        child: Text26(text: 'Comeeti Online',color: AppColors.white,),
+                        child: Image.asset(AppImages.logo,height: 160.h,width: 160.w,),
                       ),
                     ),
                     // white container
                     Positioned(
-                      top: 170.h,
+                      top: 220.h,
                       bottom: 150.h,
                       left: 30.w,
                       right: 30.w,
@@ -102,7 +91,7 @@ class _SigninViewState extends State<SigninView> {
                               12.ht,
                               CustomTextFormField(hintText: 'Enter your Email',
                                 controller: emailController,
-                                prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 24.sp,),
+                                prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 18.sp,),
                                 keyboardType: TextInputType.emailAddress,),
                               24.ht,
                               Text16(text: 'Password'),
@@ -110,7 +99,7 @@ class _SigninViewState extends State<SigninView> {
                               CustomTextFormField(
                                 hintText: 'Enter your Password',
                                 controller: passwordController,
-                                prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
+                                prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 18.sp,),
                                 obscureText: !provider.isPasswordVisible,
                                 keyboardType: TextInputType.visiblePassword,
                                 suffixIcon: IconButton(
@@ -127,12 +116,13 @@ class _SigninViewState extends State<SigninView> {
                                 onTap: (){Get.to(ForgetPasswordView());},
                                 child: Align(
                                     alignment: Alignment.centerRight,
-                                    child: Text12(text: 'Forgot Password?',color: AppColors.green,),
+                                    child: Text12(text: 'Forgot Password?',color: AppColors.blue,),
                                 ),
                               ),
                               24.ht,
                               CustomButton(
                                 text: 'Sign in',
+
                                 onTap: () {
                                   Get.to(CustomBottomNavBar());
                                 },
@@ -146,7 +136,7 @@ class _SigninViewState extends State<SigninView> {
                                   mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
                                     Text14(text: 'Don’t have an account? ',color: AppColors.grey,),
-                                    Text14(text: 'Sign up ',color: AppColors.green,),
+                                    Text14(text: 'Sign up ',color: AppColors.blue,),
                                   ],
                                 ),
                               ),

@@ -18,7 +18,7 @@ class _NotificationsViewState extends State<NotificationsView> {
     return Scaffold(
       backgroundColor: AppColors.background,
       appBar: AppBar(
-        backgroundColor: AppColors.green,
+        backgroundColor: AppColors.blue,
         elevation: 0,
         surfaceTintColor: Colors.transparent,
         centerTitle: true,

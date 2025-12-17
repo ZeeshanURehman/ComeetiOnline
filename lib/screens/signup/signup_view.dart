@@ -1,6 +1,7 @@
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/screens/signup/complete_signup_view.dart';
 import 'package:comeeti_online/screens/signup/signup_provider.dart';
+import 'package:comeeti_online/utils/app_images.dart';
 import 'package:comeeti_online/utils/extensions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -30,6 +31,7 @@ class _SignupViewState extends State<SignupView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: AppColors.background,
       body: Consumer<SignupProvider>(
           builder: (context, provider, child) {
@@ -42,44 +44,34 @@ class _SignupViewState extends State<SignupView> {
                       height: MediaQuery.of(context).size.height,
                       child: Stack(
                         children: [
-                          // top green container
+                          // top container
                           Positioned( top: 0,
                             child: Container(
-                              height: 230.h,
+                              height: 280.h,
                               width: MediaQuery.of(context).size.width,
                               decoration: BoxDecoration(
-                                color: AppColors.green,
-                                borderRadius: BorderRadius.circular(24.r),
+                                gradient: AppColors.blueGradient,
+                                borderRadius: BorderRadius.only(bottomRight: Radius.circular(24.sp),bottomLeft: Radius.circular(24.sp)),
                               ),
                             ),
                           ),
-                          //bottom green container
-                          Positioned( bottom: 0,
-                            child: Container(
-                              height: 230.h,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                color: AppColors.green,
-                                borderRadius: BorderRadius.circular(24.r),
-                              ),
-                            ),
-                          ),
+
                         ],
                       ),
                     ),
                     // Comeeti logo
                     Positioned(
-                      top: 100.h,
+                      top: 60.h,
                       left: 0.w,
                       right: 0.w,
                       child: Center(
-                        child: Text26(text: 'Comeeti Online',color: AppColors.white,),
+                        child: Image.asset(AppImages.logo,height: 160.h,width: 160.w,),
                       ),
                     ),
                     // white container
                     Positioned(
-                      top: 160.h,
-                      bottom: 150.h,
+                      top: 220.h,
+                      bottom: 130.h,
                       left: 30.w,
                       right: 30.w,
                       child: Container(
@@ -103,7 +95,7 @@ class _SignupViewState extends State<SignupView> {
                                 CustomTextFormField(hintText: 'Enter your full name',
                                   controller: nameController,
                                   keyboardType: TextInputType.name,
-                                  prefixIcon: Icon(Icons.person,color: AppColors.grey,size: 26.sp,),
+                                  prefixIcon: Icon(Icons.person,color: AppColors.grey,size: 20.sp,),
                                 ),
                                 24.ht,
                                 Text16(text: 'Email'),
@@ -111,7 +103,7 @@ class _SignupViewState extends State<SignupView> {
                                 CustomTextFormField(hintText: 'Enter your Email',
                                   controller: emailController,
                                   keyboardType: TextInputType.emailAddress,
-                                  prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 24.sp,),),
+                                  prefixIcon: Icon(Icons.email,color: AppColors.grey,size: 18.sp,),),
                                 24.ht,
                                 Text16(text: 'Password'),
                                 12.ht,
@@ -120,7 +112,7 @@ class _SignupViewState extends State<SignupView> {
                                   controller: passwordController,
                                   obscureText: !provider.isPasswordVisible,
                                   keyboardType: TextInputType.visiblePassword,
-                                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
+                                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 18.sp,),
                                   suffixIcon: IconButton(
                                     icon: Icon(
                                       provider.isPasswordVisible
@@ -135,7 +127,7 @@ class _SignupViewState extends State<SignupView> {
                                 12.ht,
                                 CustomTextFormField(hintText: 'Enter your Phone Number',
                                   controller: numberController,
-                                  prefixIcon: Icon(Icons.phone,color: AppColors.grey,size: 24.sp,),
+                                  prefixIcon: Icon(Icons.phone,color: AppColors.grey,size: 18.sp,),
                                   keyboardType: TextInputType.number,),
                                 24.ht,
                                 CustomButton(
@@ -153,7 +145,7 @@ class _SignupViewState extends State<SignupView> {
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                       Text14(text: 'Already have an account? ',color: AppColors.grey,),
-                                      Text14(text: 'Sign in ',color: AppColors.green,),
+                                      Text14(text: 'Sign in ',color: AppColors.blue,),
                                     ],
                                   ),
                                 ),

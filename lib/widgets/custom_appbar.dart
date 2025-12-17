@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../utils/app_colors.dart';
+import 'drawer.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,14 +19,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.green,
+      backgroundColor: AppColors.blue,
       elevation: 0,
       surfaceTintColor: Colors.transparent,
       centerTitle: true,
       automaticallyImplyLeading: false,
       leading: leading ??
           GestureDetector(
-            onTap: () => Get.toNamed('/myProfile'), // Example route navigation
+            onTap: () {
+              Get.to(() => const FullScreenDrawer(),
+                  transition: Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 400));
+            },
             child: Padding(
               padding: EdgeInsets.all(12.sp),
               child: Container(
@@ -37,7 +42,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
                 child: Icon(
                   Icons.person,
-                  color: AppColors.green,
+                  color: AppColors.blue,
                 ),
               ),
             ),
@@ -46,8 +51,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         title,
         style: TextStyle(
           color: AppColors.white,
-          fontSize: 22.sp,
-          fontWeight: FontWeight.w400,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w600,
           fontFamily: 'Montserrat',
         ),
       ),

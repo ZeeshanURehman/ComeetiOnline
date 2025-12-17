@@ -27,35 +27,37 @@ class CustomTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      cursorColor: AppColors.grey,
-      cursorHeight: 20.h,
-      controller: controller,
-      obscureText: obscureText,
-      keyboardType: keyboardType,
+    return Container(
+      height: 44.h,
+      child: TextFormField(
+        cursorColor: AppColors.grey,
+        cursorHeight: 20.h,
+        controller: controller,
+        obscureText: obscureText,
+        keyboardType: keyboardType,
         inputFormatters: [
-          if (limitTo10Digits)
-            LengthLimitingTextInputFormatter(10), // Apply limit if condition is true
-          FilteringTextInputFormatter.digitsOnly, // Allow only digits
+          if (limitTo10Digits) LengthLimitingTextInputFormatter(10), // Apply limit if condition is true
+          if (keyboardType == TextInputType.number) FilteringTextInputFormatter.digitsOnly, // Allow only digits for numeric fields
         ],
         validator: validator, // Add validator here
-      decoration: InputDecoration(
-        hintText: hintText,
-        hintStyle: TextStyle(
-          fontWeight: FontWeight.w500,
-          fontSize: 14.sp,
-          color: AppColors.grey,
+        decoration: InputDecoration(
+          hintText: hintText,
+          hintStyle: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 14.sp,
+            color: AppColors.grey,
+          ),
+          filled: true,
+          fillColor: AppColors.grey.withOpacity(0.1),
+          contentPadding: EdgeInsets.only(top: 10.h, left: 20.w),
+          border: OutlineInputBorder(
+            borderSide: BorderSide.none,
+            borderRadius: BorderRadius.circular(10.r),
+          ),
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
+          errorStyle: TextStyle(fontSize: 12.sp),
         ),
-        filled: true,
-        fillColor: AppColors.grey.withOpacity(0.1),
-        contentPadding: EdgeInsets.only(top: 10.h, left: 20.w),
-        border: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(10.r),
-        ),
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        errorStyle: TextStyle(fontSize: 12.sp),
       ),
     );
   }

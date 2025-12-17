@@ -58,6 +58,34 @@ class Text14 extends StatelessWidget {
   }
 }
 
+class Text15 extends StatelessWidget {
+  String text;
+  TextAlign? textAlign;
+  FontWeight? fontWeight;
+  Color? color;
+  Text15({
+    this.fontWeight,
+    this.color,
+    required this.text,
+    this.textAlign,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      textAlign: textAlign,
+      style: TextStyle(
+        fontFamily: "Quicksand",
+        fontSize: 15.sp,
+        fontWeight: fontWeight ?? FontWeight.w500,
+        color: color ?? AppColors.black,
+      ),
+    );
+  }
+}
+
+
 class Text16 extends StatelessWidget {
   String text;
   TextAlign? textAlign;

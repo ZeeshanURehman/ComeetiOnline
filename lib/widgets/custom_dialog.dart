@@ -59,7 +59,7 @@ class CustomDialogBox extends StatelessWidget {
               Text28(
                 text: title!,
                 fontWeight: FontWeight.w600,
-                color: AppColors.green,
+                color: AppColors.blue,
                 textAlign: TextAlign.center,
               ),
               30.ht,

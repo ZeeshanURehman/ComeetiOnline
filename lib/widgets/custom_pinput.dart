@@ -41,13 +41,13 @@ class CustomPinput extends StatelessWidget {
         height: 64.h,
         textStyle: TextStyle(
           fontSize: 24.sp,
-          color: AppColors.green, // Yellow color for focused digit
+          color: AppColors.blue, // Yellow color for focused digit
           fontWeight: FontWeight.w500,
         ),
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(10.r),
-          border: Border.all(color: AppColors.green), // Yellow border
+          border: Border.all(color: AppColors.blue), // Yellow border
         ),
       ),
       submittedPinTheme: PinTheme(

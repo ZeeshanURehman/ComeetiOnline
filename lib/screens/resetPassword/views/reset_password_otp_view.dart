@@ -82,7 +82,7 @@ class _ResetPasswordOtpViewState extends State<ResetPasswordOtpView> {
                     fontFamily: 'Montserrat',
                   ),
                   children: const <TextSpan>[
-                    TextSpan(text: '55', style: TextStyle(color: AppColors.green)),
+                    TextSpan(text: '55', style: TextStyle(color: AppColors.blue)),
                     TextSpan(text: 's'),
                   ],
                 ),

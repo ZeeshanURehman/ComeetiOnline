@@ -1,8 +1,9 @@
 import 'dart:async';
-import 'package:comeeti_online/screens/dashboard/dashboard_view.dart';
+import 'package:comeeti_online/screens/dashboard/views/dashboard_view.dart';
 import 'package:comeeti_online/screens/signin/signin_view.dart';
 import 'package:comeeti_online/utils/app_colors.dart';
 import 'package:comeeti_online/utils/extensions.dart';
+import 'package:comeeti_online/widgets/custom_bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -32,7 +33,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
       builder: (context) {
         Timer(Duration(seconds: 4), () {
           Navigator.of(context).pop(); // Close the dialog
-          Get.to(DashboardView()); // Navigate to the next screen
+          Get.to(CustomBottomNavBar()); // Navigate to the next screen
         });
 
         return CustomDialogBox(
@@ -71,7 +72,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                   controller: passwordController,
                   obscureText: !provider.isNewPasswordVisible,
                   keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
+                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 18.sp,),
                   suffixIcon: IconButton(
                     icon: Icon(
                       provider.isNewPasswordVisible
@@ -90,7 +91,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                   controller: cnfrmPasswordController,
                   obscureText: !provider.isConfirmPasswordVisible,
                   keyboardType: TextInputType.visiblePassword,
-                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 24.sp,),
+                  prefixIcon: Icon(Icons.lock,color: AppColors.grey,size: 18.sp,),
                   suffixIcon: IconButton(
                     icon: Icon(
                       provider.isConfirmPasswordVisible
